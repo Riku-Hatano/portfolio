@@ -16,7 +16,8 @@ const Welcome = () => {
                 justifyContent: "center",
                 alignItems: "center",
             }}
-            className="fadeInUpAnimation"
+            className="flip-2-hor-top-1"
+            // className="fadeInUpAnimation"
         >
             <Typography 
                 variant="h2" 
@@ -31,7 +32,11 @@ const Welcome = () => {
                 variant="h6" 
                 className="box"
                 sx={{
-                    padding: theme.spacing(4)
+                    padding: theme.spacing(4),
+                    // backgroundColor: {
+                    //     xs: "red",
+                    //     md: "blue",
+                    // }
                 }}
             >
                 Here are some works and brief self-introduction. I'm happy that you take a glance at this page!
