@@ -16,8 +16,8 @@ const Welcome = () => {
                 justifyContent: "center",
                 alignItems: "center",
             }}
-            className="flip-2-hor-top-1"
-            // className="fadeInUpAnimation"
+            // className="flip-2-hor-top-1"
+            className="fadeInUpAnimation"
         >
             <Typography 
                 variant="h2" 

@@ -55,7 +55,7 @@ const About = () => {
                                 </p>
                                 <div><span></span></div>
                                 <aside>
-                                    <img src="assets/test.jpeg" alt="born" />
+                                    <img src="assets/test.jpeg" alt="born" width="20vw" height="100vh"/>
                                     <img src="public/next.svg" alt="" />
                                     <figcaption>
                                         <p>

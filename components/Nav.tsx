@@ -80,7 +80,7 @@ const Nav = () => {
                     display: "flex",
                     alignItems: "center",
                     height: theme.spacing(7),
-                    backgroundColor: theme.palette.secondary.main,
+                    // backgroundColor: theme.palette.primary.main,
                     width: "100%",
                 }}
                 style={{
@@ -91,9 +91,10 @@ const Nav = () => {
                     <FontAwesomeIcon 
                         icon={faBars} 
                         color={theme.palette.primary.main}
+                        fontSize={50}
                     />
                 </IconButton>
-                <Typography 
+                {/* <Typography 
                     variant="h4"
                     sx={{
                         width: "100%",
@@ -103,7 +104,7 @@ const Nav = () => {
                     }}
                 >
                     Riku's portfolio
-                </Typography>
+                </Typography> */}
             </Grid>
         </React.Fragment>
     )
