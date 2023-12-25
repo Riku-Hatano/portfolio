@@ -28,6 +28,7 @@ const Nav = () => {
         borderBottom: `1px solid ${theme.palette.secondary.main}`,
         width: "100%",
     }));
+    const navLinks = ["top", "about", "works", "contact"];
 
     return (
         <React.Fragment>
@@ -42,37 +43,21 @@ const Nav = () => {
                 }}
             >
                 <List>
-                    <Wrapper>
-                        <LinkWrapper href="#top">
-                            <TypographyTitle children="top" />
-                        </LinkWrapper>
-                    </Wrapper>
-                    <Wrapper>
-                        <LinkWrapper href="#about">
-                            <TypographyTitle children="about" />
-                        </LinkWrapper>
-                    </Wrapper>
-                    <Wrapper>
-                        <LinkWrapper href="#works">
-                            <TypographyTitle children="works" />
-                        </LinkWrapper>
-                    </Wrapper>
-                    <Wrapper>
-                        <LinkWrapper href="#contact">
-                            <TypographyTitle children="contact" />
-                        </LinkWrapper>
-                    </Wrapper>
+                    {
+                        navLinks.map((link) => {
+                            return (
+                                <Wrapper>
+                                    <LinkWrapper href={`#${link}`}>
+                                        <TypographyTitle children={link} />
+                                    </LinkWrapper>
+                                </Wrapper>
+                            )
+                        })
+                    }
                 </List>
             </Drawer>
-            <Grid 
+            <Grid
                 sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: theme.spacing(7),
-                    // backgroundColor: theme.palette.primary.main,
-                    width: "100%",
-                }}
-                style={{
                     margin: "10px",
                     position: "fixed"
                 }}
@@ -83,7 +68,7 @@ const Nav = () => {
                         padding: 0,
                     }}
                 >
-                    <Grid
+                    <Grid //i will make some common spacing file later
                         sx={{
                             borderRadius: "50%",
                             width: {
@@ -131,23 +116,3 @@ const Nav = () => {
 }
 
 export default Nav;
-
-
-
-
-// const MyCustomComponent = ({ className, children }) => (
-//     <div className={className}>
-//       {children}
-//     </div>
-//   );
-  
-//   const StyledCustomComponent = styled(MyCustomComponent)(({ className, children }) => ({
-//     color: "blue",
-//     fontSize: "16px",
-//   }))
-
-//   const App = () => (
-//     <StyledCustomComponent>
-//       This is a styled custom component.
-//     </StyledCustomComponent>
-//   );
