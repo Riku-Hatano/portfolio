@@ -20,7 +20,7 @@ const Welcome = () => {
             className="fadeInUpAnimation"
         >
             <Typography 
-                variant="h2" 
+                variant="h2"
                 className="box"
                 sx={{
                     textAlign: "center"
@@ -33,10 +33,6 @@ const Welcome = () => {
                 className="box"
                 sx={{
                     padding: theme.spacing(4),
-                    // backgroundColor: {
-                    //     xs: "red",
-                    //     md: "blue",
-                    // }
                 }}
             >
                 Here are some works and brief self-introduction. I'm happy that you take a glance at this page!

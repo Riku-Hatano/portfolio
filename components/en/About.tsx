@@ -56,7 +56,7 @@ const About = () => {
                                 <div><span></span></div>
                                 <aside>
                                     <img src="assets/test.jpeg" alt="born" width="20vw" height="100vh"/>
-                                    <img src="public/next.svg" alt="" />
+                                    {/* <img src="public/next.svg" alt="" /> */}
                                     <figcaption>
                                         <p>
                                             Born in Niigata prefecture, located on north of Tokyo. I was too mischievous and oftern do stupid things to stranger though, I don't remember anything.

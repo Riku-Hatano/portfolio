@@ -22,13 +22,14 @@ const Nav = () => {
         "&:hover": {
             backgroundColor: theme.palette.secondary.main,
             color: theme.palette.primary.main,
+            fontSize: "20px",
         }
     }));
     const LinkWrapper = styled(Link)(({ theme, tag }: any) => ({
         borderBottom: `1px solid ${theme.palette.secondary.main}`,
         width: "100%",
     }));
-    const navLinks = ["top", "about", "works", "contact"];
+    const navLinks = ["TOP", "ABOUT", "WORKS", "CONTACT"];
 
     return (
         <React.Fragment>
@@ -46,8 +47,8 @@ const Nav = () => {
                     {
                         navLinks.map((link) => {
                             return (
-                                <Wrapper>
-                                    <LinkWrapper href={`#${link}`}>
+                                <Wrapper key={link}>
+                                    <LinkWrapper href={`#${(link.toLocaleLowerCase())}`} underline="none">
                                         <TypographyTitle children={link} />
                                     </LinkWrapper>
                                 </Wrapper>
