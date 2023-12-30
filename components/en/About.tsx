@@ -1,16 +1,18 @@
 "use client"
 
 import { Grid, List, ListItem, Typography } from "@mui/material";
-import { Timeline, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector, TimelineContent, TimelineOppositeContent } from "@mui/lab"
+import { Timeline, TimelineItem, TimelineSeparator, TimelineContent, TimelineOppositeContent } from "@mui/lab"
+import { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent';
+  
 import React from "react";
 import "../Animations.css";
 import theme from "../Theme";
-import { SectionTitle } from "../Common";
+import { SectionTitle, MyTimelineConnector, MyTimelineDot } from "../Common";
 
 const About = () => {
     return (
         <React.Fragment>
-            <Grid container id="about" className="fadeInUpAnimation" sx={{padding: theme.spacing(2)}}>
+            <Grid container id="about" className="fadeInUpAnimation" sx={{padding: theme.spacing(10)}}>
                 <Typography variant="h2">skills</Typography>
                 <Grid container item direction="row" sx={{justifyContent: "space-between"}}>
                     <Grid>
@@ -39,26 +41,36 @@ const About = () => {
                         </List>
                     </Grid>
                 </Grid>
-                <Grid container spacing={4}>
-                    <Grid item>
-                        <Typography variant="h2">about me</Typography>
-                        <Typography variant="h4">self introduction</Typography>
-                        <Typography variant="body1">
-                            Hi! I'm Riku Hatano, from Japan! I have learned web development in Tamwood Careers for six months and before joinning Tamwood, I have studied this field for five months.
-                        </Typography>
+                <Grid container rowSpacing={4}>
+                    <Grid item container rowSpacing={2}>
+                        <Grid item>
+                            <Typography variant="h2">about me</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="h4">self introduction</Typography>
+                            <Typography variant="body1">
+                                Hi! I'm Riku Hatano, from Japan! I have learned web development in Tamwood Careers for six months and before joinning Tamwood, I have studied this field for five months.
+                            </Typography>
+                        </Grid>
                     </Grid>
                     <Grid item>
                         <Typography variant="h4">short history</Typography>
                         <Typography variant="body1">Let's look back on my life a little bit!</Typography>
-                        <Timeline position="alternate">
+                        <Timeline 
+                            position="right"
+                            sx={{
+                                [`& .${timelineOppositeContentClasses.root}`]: {
+                                  flex: 0.2,
+                                },
+                            }}
+                        >
                             <TimelineItem>
                                 <TimelineOppositeContent>
                                     1999.08
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
-                                    <TimelineDot>
-                                    </TimelineDot>
-                                    <TimelineConnector />
+                                    <MyTimelineDot />
+                                    <MyTimelineConnector  />
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     Born in Niigata prefecture, located on north of Tokyo. I was too mischievous and oftern do stupid things to stranger though, I don't remember anything.
@@ -69,8 +81,8 @@ const About = () => {
                                     2003~'15
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
+                                    <MyTimelineDot />
+                                    <MyTimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     Moved to Chiba prefecture close to Tokyo. And I have played soccer for full of 13 years.
@@ -81,8 +93,8 @@ const About = () => {
                                     2015~'18
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
+                                    <MyTimelineDot />
+                                    <MyTimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     Instead of soccer, I started to play badminton as club activity. But one year later, because of asthma, I quit to play.
@@ -93,8 +105,8 @@ const About = () => {
                                     2018~'21
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
+                                    <MyTimelineDot />
+                                    <MyTimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     <Typography>
@@ -110,8 +122,8 @@ const About = () => {
                                     2022~now
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
+                                    <MyTimelineDot />
+                                    <MyTimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     I have been to Dubai to study English and Vancouver to learn WebDevelopment. Then, I've joined internship for three months in Japan.
