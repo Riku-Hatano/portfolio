@@ -14,7 +14,7 @@ const About = () => {
         <React.Fragment>
             <Grid container id="about" className="fadeInUpAnimation" sx={{padding: theme.spacing(10)}}>
                 <Typography variant="h2">skills</Typography>
-                <Grid container item direction="row" sx={{justifyContent: "space-between"}}>
+                <Grid container item direction="row" sx={{justifyContent: "space-between"}} mb={10}>
                     <Grid>
                         <Typography variant="h4">front end</Typography>
                         <List>
@@ -123,7 +123,6 @@ const About = () => {
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
                                     <MyTimelineDot />
-                                    <MyTimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     I have been to Dubai to study English and Vancouver to learn WebDevelopment. Then, I've joined internship for three months in Japan.
