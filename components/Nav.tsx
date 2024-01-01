@@ -1,36 +1,40 @@
 "use client"
 
 import React from "react"
-import { Drawer, List, Typography, Grid, IconButton, Link } from "@mui/material"
+import { Drawer, List, Typography, Grid, IconButton, Link, ListItem } from "@mui/material"
 import { useState } from "react";
 import { styled } from "@mui/material";
 import theme from "./Theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { Wrapper } from "./Common";
+import i18n from "@/i18n";
+import i18next from "i18next";
+
+const TypographyTitle = styled(Typography)(({ theme }: any) => ({
+    color: theme.palette.secondary.main,
+    padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+    transition: ".4s",
+    "&:hover": {
+        backgroundColor: theme.palette.secondary.main,
+        color: theme.palette.primary.main,
+        fontSize: "20px",
+    }
+}));
+const LinkWrapper = styled(Link)(({ theme, tag }: any) => ({
+    // borderBottom: `1px solid ${theme.palette.secondary.main}`,
+    width: "100%",
+}));
 
 const Nav = () => {
     const [toggle, setToggle] = useState(false);
     const onToggle = () => {
         setToggle(!toggle);
     }
-
-    const TypographyTitle = styled(Typography)(({ theme }: any) => ({
-        color: theme.palette.secondary.main,
-        padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
-        transition: ".4s",
-        "&:hover": {
-            backgroundColor: theme.palette.secondary.main,
-            color: theme.palette.primary.main,
-            fontSize: "20px",
-        }
-    }));
-    const LinkWrapper = styled(Link)(({ theme, tag }: any) => ({
-        borderBottom: `1px solid ${theme.palette.secondary.main}`,
-        width: "100%",
-    }));
-    const navLinks = ["TOP", "ABOUT", "WORKS", "CONTACT"];
-
+    const navLinks = ["TOP", "ABOUT", "WORKS"];
+    const langToggle = () => {
+        i18next.language === "en" ? i18next.changeLanguage("ja") : i18next.changeLanguage("en")
+    }
     return (
         <React.Fragment>
             <Drawer
@@ -55,6 +59,11 @@ const Nav = () => {
                             )
                         })
                     }
+                    <Wrapper onClick={langToggle}>
+                        <LinkWrapper underline="none">
+                            <TypographyTitle children={i18n.language === "en" ? "JAPANESE" : "ENGLISH"} />
+                        </LinkWrapper>
+                    </Wrapper>
                 </List>
             </Drawer>
             <Grid
