@@ -4,16 +4,17 @@ import Works from "./en/Works";
 import Welcome from "./en/Welcome";
 import Nav from "./Nav";
 import React from "react";
+import theme from "./Theme";
 
 const Layout = () => {
     return (
-        <React.Fragment>
+        <div style={{backgroundColor: theme.palette.secondary.main}}>
             <Nav />
             <Welcome />
             <About />
             <Works />
             <Contact />
-        </React.Fragment>
+        </div>
     )
 }
 

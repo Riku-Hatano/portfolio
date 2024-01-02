@@ -17,6 +17,12 @@ const theme = createTheme({
         lg: 1200,
         xl: 1530
     }
+  },
+  typography: {
+    // title: {
+    //   backgroundColor: "red",
+    //   color: "white"
+    // }
   }
 });
 
