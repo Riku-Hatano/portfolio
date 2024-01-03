@@ -11,10 +11,6 @@ export const Wrapper = styled(Box)(() => ({
 }))
 
 export const SectionTitle = styled(Typography)(({variant="h1"}) => ({
-    // backgroundColor: "red",
-    // ".&MuiTypography-root": {
-    //     backgroundColor: "khaki",
-    // }
     [`&.MuiTypography-${variant}`]: {
         backgroundColor: 'khaki',
       },

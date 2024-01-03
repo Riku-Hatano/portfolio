@@ -3,30 +3,55 @@
 import { Grid, List, ListItem, Typography } from "@mui/material";
 import { Timeline, TimelineItem, TimelineSeparator, TimelineContent, TimelineOppositeContent } from "@mui/lab"
 import { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent';
-  
 import React from "react";
 import "../Animations.css";
 import theme from "../Theme";
-import { SectionTitle, MyTimelineConnector, MyTimelineDot } from "../Common";
+import { MyTimelineConnector, MyTimelineDot } from "../Common";
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next";
 
+interface TimelineComponent {
+    time: string,
+    content: string,
+    isLastContent?: boolean
+}
+const TimelineComponent = ({ time, content, isLastContent=false}: TimelineComponent) => {
+    return (
+        <TimelineItem>
+            <TimelineOppositeContent>
+                {time}
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+                <MyTimelineDot />
+                {
+                    !isLastContent && <MyTimelineConnector />
+                }
+            </TimelineSeparator>
+            <TimelineContent>
+                {content}
+            </TimelineContent>
+        </TimelineItem>
+    )
+}
 const About = () => {
+    const { t } = useTranslation();
     return (
         <React.Fragment>
             <Grid container id="about" className="fadeInUpAnimation" sx={{padding: theme.spacing(10)}}>
-                <Typography variant="h2">skills</Typography>
+                <Typography variant="h2" mb={2}>Skills</Typography>
                 <Grid container item direction="row" sx={{justifyContent: "space-between"}} mb={10}>
                     <Grid>
-                        <Typography variant="h4">front end</Typography>
+                        <Typography variant="h4">Front End</Typography>
                         <List>
-                            <ListItem>JavaScript / TypeScript</ListItem>
-                            <ListItem>React.js / React.ts</ListItem>
-                            <ListItem>Vue.js</ListItem>
-                            <ListItem>jQuery</ListItem>
-                            <ListItem>UX/UI design</ListItem>
+                            <ListItem>TypeScript</ListItem>
+                            <ListItem>React</ListItem>
+                            <ListItem>Next</ListItem>
+                            <ListItem>Redux</ListItem>
+                            <ListItem>Material UI</ListItem>
                         </List>
                     </Grid>
                     <Grid>
-                        <Typography variant="h4">back end</Typography>
+                        <Typography variant="h4">Back End</Typography>
                         <List>
                             <ListItem>Node.js</ListItem>
                             <ListItem>PHP</ListItem>
@@ -34,9 +59,9 @@ const About = () => {
                         </List>
                     </Grid>
                     <Grid>
-                        <Typography variant="h4">dev ops</Typography>
+                        <Typography variant="h4">Dev Ops</Typography>
                         <List>
-                            <ListItem>Git / GitHub</ListItem>
+                            <ListItem>GitHub</ListItem>
                             <ListItem>Figma</ListItem>
                         </List>
                     </Grid>
@@ -44,18 +69,16 @@ const About = () => {
                 <Grid container rowSpacing={4}>
                     <Grid item container rowSpacing={2}>
                         <Grid item>
-                            <Typography variant="h2">about me</Typography>
+                            <Typography variant="h2">About Me</Typography>
                         </Grid>
                         <Grid item>
-                            <Typography variant="h4">self introduction</Typography>
-                            <Typography variant="body1">
-                                Hi! I'm Riku Hatano, from Japan! I have learned web development in Tamwood Careers for six months and before joinning Tamwood, I have studied this field for five months.
-                            </Typography>
+                            <Typography variant="h4">{t("about-selfIntroduction")}</Typography>
+                            <Typography variant="body1">{t("about-selfIntroductionContent")}</Typography>
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <Typography variant="h4">short history</Typography>
-                        <Typography variant="body1">Let's look back on my life a little bit!</Typography>
+                        <Typography variant="h4">{t("about-shortHistory")}</Typography>
+                        <Typography variant="body1">{t("about-shortHistorySentence")}</Typography>
                         <Timeline 
                             position="right"
                             sx={{
@@ -64,70 +87,11 @@ const About = () => {
                                 },
                             }}
                         >
-                            <TimelineItem>
-                                <TimelineOppositeContent>
-                                    1999.08
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <MyTimelineDot />
-                                    <MyTimelineConnector  />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    Born in Niigata prefecture, located on north of Tokyo. I was too mischievous and oftern do stupid things to stranger though, I don't remember anything.
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent>
-                                    2003~'15
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <MyTimelineDot />
-                                    <MyTimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    Moved to Chiba prefecture close to Tokyo. And I have played soccer for full of 13 years.
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent>
-                                    2015~'18
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <MyTimelineDot />
-                                    <MyTimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    Instead of soccer, I started to play badminton as club activity. But one year later, because of asthma, I quit to play.
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent>
-                                    2018~'21
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <MyTimelineDot />
-                                    <MyTimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <Typography>
-                                        In university, I have learned Economics. Actually I enjoyed leaning though, I was interested in programming.
-                                    </Typography>
-                                    <Typography>
-                                        When COVID happened and forced to be inside of house, I touched JavaScript for the first time. 
-                                    </Typography>
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent>
-                                    2022~now
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <MyTimelineDot />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    I have been to Dubai to study English and Vancouver to learn WebDevelopment. Then, I've joined internship for three months in Japan.
-                                </TimelineContent>
-                            </TimelineItem>
+                            <TimelineComponent time="1999.08" content={t("about-historyContent1")} />
+                            <TimelineComponent time="2003~'15" content={t("about-historyContent2")} />
+                            <TimelineComponent time="2015~'18" content={t("about-historyContent3")} />
+                            <TimelineComponent time="2018~'21" content={t("about-historyContent4")} />
+                            <TimelineComponent time="2022~now" content={t("about-historyContent5")} />
                         </Timeline>
                     </Grid>
                 </Grid>

@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import { Grid, Typography } from "@mui/material";
 import theme from "../Theme";
 import "../Animations.css";
+import { useTranslation } from 'react-i18next';
 
 const Welcome = () => {
+    const { t } = useTranslation();
     return (
         <Grid 
             id="top"
@@ -26,7 +28,7 @@ const Welcome = () => {
                     textAlign: "center"
                 }}
             >
-                welcome to my portfolio site!
+                {t("welcome-title")}
             </Typography>
             <Typography 
                 variant="h6" 
@@ -35,7 +37,7 @@ const Welcome = () => {
                     padding: theme.spacing(4),
                 }}
             >
-                Here are some works and brief self-introduction. I'm happy that you take a glance at this page!
+                {t("welcome-sentence")}
             </Typography>
         </Grid>
     )
