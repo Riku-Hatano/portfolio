@@ -23,9 +23,9 @@ const WorkComponent = ({ title, appLink, imgSrc, sentences }: WorkComponent) => 
                 </Grid>
                 <Grid item xs={12} sm={6} md={8}>
                     {
-                        sentences.map((item) => {
+                        sentences.map((item, idx) => {
                             return (
-                                <Typography variant="body1">
+                                <Typography variant="body1" key={`${item}:${idx}`}>
                                     {item}
                                 </Typography>
                             )

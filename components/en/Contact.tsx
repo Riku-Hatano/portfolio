@@ -44,9 +44,9 @@ const Contact = () => {
                 }}
             >
                 {
-                    Object.keys(links).map((item: string) => {
+                    Object.keys(links).map((item: string, idx: number) => {
                         return (
-                            <ListItem>
+                            <ListItem key={`${item}:${idx}`}>
                                 <Link href={links[item].linkto} sx={{width: "100%", display: "flex", justifyContent: "center"}}>
                                     <FontAwesomeIcon icon={links[item].icon} color={theme.palette.secondary.main}/>
                                 </Link>
