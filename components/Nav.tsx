@@ -53,7 +53,9 @@ const Nav = () => {
                             return (
                                 <Wrapper key={link}>
                                     <LinkWrapper href={`#${(link.toLocaleLowerCase())}`} underline="none">
-                                        <TypographyTitle children={link} />
+                                        <TypographyTitle>
+                                            {link}
+                                        </TypographyTitle>
                                     </LinkWrapper>
                                 </Wrapper>
                             )
@@ -61,7 +63,9 @@ const Nav = () => {
                     }
                     <Wrapper onClick={langToggle}>
                         <LinkWrapper underline="none">
-                            <TypographyTitle children={i18n.language === "en" ? "JAPANESE" : "ENGLISH"} />
+                            <TypographyTitle>
+                                {i18n.language === "en" ? "JAPANESE" : "ENGLISH"}
+                            </TypographyTitle>
                         </LinkWrapper>
                     </Wrapper>
                 </List>
