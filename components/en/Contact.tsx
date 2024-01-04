@@ -1,7 +1,7 @@
 import { Grid, List, ListItem, Link } from "@mui/material";
 import theme from "../Theme";
 import { faEnvelope, faAngleUp } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,11 +9,9 @@ interface Link {
     linkto: string;
     icon: IconDefinition;
 }
-
 interface Links {
     [key: string]: Link;
 }
-
 const links: Links = {
     mail: {
         linkto: "mailto:lutianle89@gmail.com?subject=SweetWords&body=Please send me a copy of your new program!",
@@ -39,7 +37,7 @@ const Contact = () => {
                 sx={{
                     width: "100%",
                     display: "flex",
-                    justifyContent: "space-around",
+                    justifyContent: "center",
                     backgroundColor: theme.palette.primary.main,
                 }}
             >

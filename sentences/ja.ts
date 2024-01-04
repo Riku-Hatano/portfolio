@@ -4,7 +4,7 @@ const ja = {
     "about-selfIntroduction": "自己紹介",
     "about-selfIntroductionContent": "初めまして！中央大学経済学部経済学科４年の畑野陸と申します！2022年の10月から2023年の3月まで、バンクーバーのTamwoodCareersというカレッジでプログラミングを勉強していました。趣味は筋トレとボードゲームです。よろしくお願いします！",
     "about-shortHistory": "軽い生い立ち",
-    "about-shortHistorySentence": "Let's look back on my life a little bit!",
+    "about-shortHistorySentence": "せっかくなので少しだけ振り返ってみましょう！",
     "about-historyContent1": "新潟県で生まれる。小さい頃は知らない人にひたすら話しかけるなど、いたずらっ子だった。記憶はない。",
     "about-historyContent2": "幼稚園から中学の終わりまでの13年間サッカーに励む。小学校や中学校の部活動ではよく上の学年の試合に出場していた。",
     "about-historyContent3": "高校からはバドミントンを新しく始める。しかし喘息が悪化してしまい一年ほどで部活を辞めてしまう。",
