@@ -5,6 +5,8 @@ import { Grid, Typography } from "@mui/material";
 import theme from "../Theme";
 import "../Animations.css";
 import { useTranslation } from 'react-i18next';
+import { ComponentWrapper } from "../Common";
+
 
 const Welcome = () => {
     const { t } = useTranslation();

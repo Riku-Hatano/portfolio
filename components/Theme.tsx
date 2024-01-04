@@ -18,12 +18,6 @@ const theme = createTheme({
         xl: 1530
     }
   },
-  typography: {
-    // title: {
-    //   backgroundColor: "red",
-    //   color: "white"
-    // }
-  }
 });
 
 export default theme;
