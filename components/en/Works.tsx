@@ -44,7 +44,7 @@ const Works = () => {
             <Grid container item rowSpacing={6} sx={{justifyContent: "space-between"}}>
                 <WorkComponent 
                     title={t("works1-title")}
-                    appLink="https://othello-wheat.vercel.app/"
+                    appLink="https://othello2.vercel.app/"
                     imgSrc="/assets/othello.png"
                     sentences={[
                         t("works1-sentence1"),
